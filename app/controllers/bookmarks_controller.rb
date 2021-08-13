@@ -9,7 +9,7 @@ class BookmarksController < ApplicationController
     @list = List.find(params[:list_id])
     @bookmark.list = @list
     if @bookmark.save!
-      redirect_to root_path(@list)
+      redirect_to list_path(@list)
     else
       render :new
     end
