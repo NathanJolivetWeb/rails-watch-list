@@ -1,0 +1,82 @@
+.card-list a {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  &:hover {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+  }
+}
+.card-list {
+  margin: 0 15px;
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.card-trip {
+  padding: 10px;
+  margin: 0 24px;
+  height: 500px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.card-trip > img {
+  width: 400px;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+.card-trip h2 {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+.card-trip p {
+  color: grey;
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+.gold {
+  color: gold;
+  margin-left: 3px;
+}
+.item {
+  position: relative;
+  display: block;
+  flex: 1 1 0px;
+  transition: transform 500ms;
+}
+.container:focus-within .item,
+.container:hover .item {
+  transform: translateX(-10%);
+}
+.item:focus ~ .item,
+.item:hover ~ .item {
+  transform: translateX(10%);
+}
+.container .item:focus,
+.container .item:hover {
+  transform: scale(1.2);
+  z-index: 1;
+}

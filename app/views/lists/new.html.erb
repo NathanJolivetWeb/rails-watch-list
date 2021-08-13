@@ -1,0 +1,11 @@
+<div class='container p-5'>
+  <div class='form'>
+    <%= simple_form_for(@list) do |f| %>
+      <%= f.input :name %>
+      <%= f.submit "Submit", class: "mt-2 btn btn-secondary w-100" %>
+    <% end %>
+  </div>
+  <%= link_to lists_path do %>
+    <div class="mt-2 btn btn-info w-100">Back to lists</div>
+  <%end%>
+</div>

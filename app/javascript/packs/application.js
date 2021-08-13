@@ -9,3 +9,12 @@ require("@rails/activestorage").start()
 require("channels")
 
 import 'bootstrap';
+console.log("Hello from app/javascript/packs/application.js!");
+
+import { loadDynamicBannerText } from '../components/banner';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  // [...]
+  loadDynamicBannerText();
+});

@@ -1,0 +1,26 @@
+<nav class="navbar bg-black justify-content-beetwen sticky-top">
+  <%= link_to "Home", lists_path, class: "nav-link text-danger" %>
+  <%= link_to "Add Movie", new_list_bookmark_path(@list), class: "nav-link text-danger" %>
+  <%= link_to "New List", new_list_path, class: "nav-link text-danger" %>
+</nav>
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <% @list.bookmarks.each do |bookmark| %>
+    <div class="col item">
+      <div class="card-trip">
+        <img src="<%=bookmark.movie.poster_url%>" />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= bookmark.movie.title %> - <%= bookmark.movie.rating %><i class="fas fa-star gold"></i></h2>
+            <p><%= bookmark.comment %></p>
+          </div>
+          <div class=''>
+            <%= link_to 'Delete', bookmark_path(bookmark), class: 'text-danger', method: :delete, data: { confirm: "Are you sure you want to remove this movie from yourlist"} %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
