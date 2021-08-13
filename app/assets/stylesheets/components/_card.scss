@@ -1,3 +1,9 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  justify-content: space-around;
+}
 .card-list a {
   text-decoration: none;
   list-style: none;
@@ -9,10 +15,12 @@
   }
 }
 .card-list {
-  margin: 0 15px;
+  margin: 80px 20px 0 20px;
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 300px;
+  width: 400px;
+  min-width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,14 +74,6 @@
   display: block;
   flex: 1 1 0px;
   transition: transform 500ms;
-}
-.container:focus-within .item,
-.container:hover .item {
-  transform: translateX(-10%);
-}
-.item:focus ~ .item,
-.item:hover ~ .item {
-  transform: translateX(10%);
 }
 .container .item:focus,
 .container .item:hover {
