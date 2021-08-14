@@ -11,10 +11,10 @@ require("channels")
 import 'bootstrap';
 console.log("Hello from app/javascript/packs/application.js!");
 
+import { initSelect2 } from '../components/init_select2';
 import { loadDynamicBannerText } from '../components/banner';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your JS functions here
-  // [...]
+  initSelect2();
   loadDynamicBannerText();
 });

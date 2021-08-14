@@ -1,8 +1,8 @@
 <div class='container p-5'>
   <div class='form'>
     <%= simple_form_for [ @list, @bookmark ] do |f| %>
-      <%= f.input :comment %>
-      <%= f.association :movie %>
+      <%= f.input :comment, label_html: { class: "white-label"}%>
+      <%= f.association :movie, required: false, input_html: { class: "select2",style: "width: 100%" }, label_html: { class: "white-label"}%>
       <%= f.submit "Submit", class: "mt-2 btn btn-secondary w-100" %>
     <% end %>
   </div>

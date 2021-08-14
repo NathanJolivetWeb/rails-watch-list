@@ -1,8 +1,8 @@
 <div class='container p-5'>
   <div class='form'>
     <%= simple_form_for(@list) do |f| %>
-      <%= f.input :name %>
-      <%=f.input :photo, as: :file %>
+      <%= f.input :name, required: false, label_html: { class: "white-label"} %>
+      <%=f.input :photo,label_html: { class: "white-label"}, as: :file %>
       <%= f.submit "Submit", class: "mt-2 btn btn-secondary w-100" %>
     <% end %>
   </div>
