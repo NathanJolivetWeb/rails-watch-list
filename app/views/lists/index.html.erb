@@ -1,16 +1,18 @@
 <%= render "shared/banner" %>
 <%= render "shared/navbar" %>
 
-
 <div class="container mt-4 mb-5">
   <div class="card-container">
     <% @lists.each do |list| %>
       <% if list.photo.attached? %>
-        <div class="card-list item d-flex align-items-center align-self-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
+        <div class="card-list item d-flex align-items-center align-self-center" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
       <% else %>
         <div class="card-list item d-flex align-items-center align-self-center" style="background-color: black">
       <% end %>
       <%= link_to list.name, list_path(list) %>
+      <%= link_to list_path(list), method: :delete, data: { confirm: "Are you sure you want to remove #{list.name} from your list"} do%>
+        <small class="delete"><i class="fas fa-trash-alt"></i></small>
+      <% end %>
       </div>
     <% end %>
   </div>

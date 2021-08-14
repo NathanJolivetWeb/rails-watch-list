@@ -13,7 +13,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    if @list.save!
+    if @list.save
       redirect_to @list, notice: 'list was successfully created.'
     else
       render :new
